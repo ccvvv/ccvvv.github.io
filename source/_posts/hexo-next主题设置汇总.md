@@ -1,7 +1,12 @@
-title: next主题设置汇总
-tags: next主题设置
-categories: hexo
 ---
+title: next主题设置汇总
+tags:
+  - next主题设置
+categories:
+  - hexo
+date: 2019-04-25 11:08:02
+---
+
 #### 本地搜索
 安装
 ```
@@ -21,7 +26,7 @@ local_search:
   enable: true
 ```
 ---
-####设置禁止阅读全文
+#### 设置禁止阅读全文
 修改“主题”配置文件
 ```
 auto_excerpt: 
