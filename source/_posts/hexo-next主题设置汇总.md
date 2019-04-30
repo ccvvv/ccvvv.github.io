@@ -7,7 +7,7 @@ categories:
 date: 2019-04-25 11:08:02
 ---
 
-#### 本地搜索
+### 本地搜索
 安装
 ```
 npm install hexo-generator-searchdb --save
@@ -26,7 +26,7 @@ local_search:
   enable: true
 ```
 ---
-#### 设置禁止阅读全文
+### 设置禁止阅读全文
 修改“主题”配置文件
 ```
 auto_excerpt: 
