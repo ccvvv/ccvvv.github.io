@@ -7,14 +7,18 @@ date: 2019-05-10 20:38:50
 ---
 
 ## 准备工作
-游戏主页
+### 游戏下载地址
+```
+https://cataclysmdda.org/releases/
+```
+### 游戏主页
 ```
 https://github.com/CleverRaven/Cataclysm-DDA```
 编译指导
 ```
 https://www.github.com/CleverRaven/Cataclysm-DDA/blob/master/COMPILING.md
 ```
-make相关参数
+### make相关参数
 ```
 https://www.github.com/CleverRaven/Cataclysm-DDA/blob/master/Makefile
 ```
