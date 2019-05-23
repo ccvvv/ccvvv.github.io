@@ -12,14 +12,14 @@ date: 2019-05-23 18:54:49
 #include<stdio.h>
 int main(void)
 {
-		int i,j;
-		for (i=1;i<=3;i++){
-			for (j=0;j<i;j++){
-				printf("0");
-			}
-		printf("\n");
+	int i,j;
+	for (i=1;i<=3;i++){
+		for (j=0;j<i;j++){
+			printf("0");
 		}
-		return 0;
+	printf("\n");
+	}
+	return 0;
 }
 ```
 #### 输出如下
@@ -35,17 +35,17 @@ int main(void)
 #include<stdio.h>
 int main(void)
 {
-		int i,j,k;
-		for (i=1;i<=3;i++){
-			for (k=3;k>i;k--){
-				printf(" ");
-			}
-			for (j=0;j<i;j++){
-				printf("0");
-			}
-		printf("\n");
+	int i,j,k;
+	for (i=1;i<=3;i++){
+		for (k=3;k>i;k--){
+			printf(" ");
 		}
-		return 0;
+		for (j=0;j<i;j++){
+			printf("0");
+		}
+	printf("\n");
+	}
+	return 0;
 }
 ```
 #### 输出如下
