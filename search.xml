@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[for循环输出图形]]></title>
+    <url>%2F2019%2F05%2F23%2Fc-for%2F</url>
+    <content type="text"><![CDATA[最初三角图形123456789101112#include&lt;stdio.h&gt;int main(void)&#123; int i,j; for (i=1;i&lt;=3;i++)&#123; for (j=0;j&lt;i;j++)&#123; printf("0"); &#125; printf("\n"); &#125; return 0;&#125; 输出如下123000000 让三角左右颠倒过来12345678910111213141516/*原理和上面那个一样。只是让三角形左右颠倒的话需要额外创建变量k以输出空格。*/#include&lt;stdio.h&gt;int main(void)&#123; int i,j,k; for (i=1;i&lt;=3;i++)&#123; for (k=3;k&gt;i;k--)&#123; printf(" "); &#125; for (j=0;j&lt;i;j++)&#123; printf("0"); &#125; printf("\n"); &#125; return 0;&#125; 输出如下123 0 00000]]></content>
+      <categories>
+        <category>cpp</category>
+      </categories>
+      <tags>
+        <tag>for循环</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[cataclysm安装教程]]></title>
+    <url>%2F2019%2F05%2F10%2Fcataclysm%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[准备工作游戏下载地址1https://cataclysmdda.org/releases/ 游戏主页1https://github.com/CleverRaven/Cataclysm-DDA 编译指导1https://www.github.com/CleverRaven/Cataclysm-DDA/blob/master/COMPILING.md make相关参数1https://www.github.com/CleverRaven/Cataclysm-DDA/blob/master/Makefile 下载游戏首先克隆下来 depth就是浅拷贝，它只会拷贝最后一次提交，而不是所有的提交记录。1git clone -b master --depth=1 https://github.com/CleverRaven/Cataclysm-DDA.git 下载编译所需1ccache clang astyle 下载游戏依赖基于Arch的依赖：重要：gcc-libs glibc zlib bzip2 astyle可选： gettext终端界面： ncurses图形界面：sdl2，sdl2_image，sdl2_ttf，sdl2_mixer，freetype2 基于debian的依赖：运行下面的命令以安装依赖1sudo apt-get install libncurses5-dev libncursesw5-dev build-essential astyle gettext 编译然后进入下载的游戏主目录，运行下面命令编译游戏：1make -j8 CLANG=1 CCACHE=1 RELEASE=1 LANGUAGES=zh_CN 小问题如果游戏目录下lang文件里没有mo文件。你需要进入 Cataclysm-DDA/lang 目录下，运行编译脚本：1./compile_mo.sh 就可以愉快的玩游戏了！ P1:gettext-用于本地化支持;如果你打算只使用英语，你可以跳过它。P2:astyle 是makefile文件里所需要的。P3:最新的游戏已经不需要lua了。P4:想了解更多make的参数详情请阅读首页给出的网址。P5:如果git clone下载速度过于感人。可以直接去该游戏的网址主页下载zip压缩包。]]></content>
+      <categories>
+        <category>linux游戏</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[安装hexo-hey]]></title>
+    <url>%2F2019%2F05%2F10%2F%E5%AE%89%E8%A3%85hexo-hey%2F</url>
+    <content type="text"><![CDATA[安装hexo-hey1npm install hexo-hey --save 添加以下内容到你的站点配置文件内12345admin: name:hexo password: hey secret: hey hexo expire: 60*1 启动hexo-hey1hexo s 打开网页1http://localhost:4000/admin]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo-hey</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[使用hexo在git的备用]]></title>
+    <url>%2F2019%2F05%2F10%2F%E4%BD%BF%E7%94%A8hexo%E5%A4%87%E4%BB%BD%2F</url>
+    <content type="text"><![CDATA[创建新文件夹1mkdir blog 进入文件夹1cd blog 配置gitgit 初始化1git init git关联远程库1git remote add origin git@github.com:ccvvv/ccvvv.github.io.git git创建并切换分支1git checkout -b bf 拉取远程分支1git pull origin bf 安装hexo12npm install hexo -gnpm install hexo --save]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>hexo安装及简单配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[next主题设置汇总]]></title>
+    <url>%2F2019%2F04%2F25%2Fhexo-next%E4%B8%BB%E9%A2%98%E8%AE%BE%E7%BD%AE%E6%B1%87%E6%80%BB%2F</url>
+    <content type="text"><![CDATA[本地搜索安装1npm install hexo-generator-searchdb --save 添加以下内容到“站点”配置文件_config.yml12345search: path: search.xml field: post format: html limit: 10000 修改“主题”配置文件12local_search: enable: true 设置禁止阅读全文修改“主题”配置文件123auto_excerpt: enable: true length: 150 #length设定文章预览的文本长度。 以下是插件链接canvas_nest1git clone https://github.com/theme-next/theme-next-canvas-nest source/lib/canvas-nest canvas_three1git clone https://github.com/theme-next/theme-next-three source/lib/three canvas_ribbon1git clone https://github.com/theme-next/theme-next-canvas-ribbon source/lib/canvas-ribbon]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>next主题设置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo安装及简单配置]]></title>
+    <url>%2F2019%2F04%2F23%2Fhexo%E5%AE%89%E8%A3%85%E5%8F%8A%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[安装依赖。npm已经包含nodejs1pacman -S npm 配置npm国内源1npm config set registry http://registry.npm.taobao.org/ 安装hexo1npm install -g hexo-cli 新建文件夹用作博客目录1mkdir blog hexo 初始化 “必须是空目录”1hexo init blog 进入blog操作安装hexo-git1npm install --save hexo-deployer-git 添加 _config.yml的远程库信息12345type: gitrepo: git@github.com:ccvvv/ccvvv.github.io.gitbranch: master]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo安装及简单配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[git初始化并关联远程库]]></title>
+    <url>%2F2019%2F04%2F21%2Fgit%2F</url>
+    <content type="text"><![CDATA[初始化1git init 设置邮箱用户名123git config --global user.email "178282609@qq.com"git config --global user.name "neoiso" 添加密钥1ssh-keygen -t rsa -C '178282609@qq.com' 显示出密钥内容1cat /root/.ssh/id_rsa.pub 添加到网页中。 然后两种方式来关联远程库第一种，直接克隆远程库1git clone git@github.com:ccvvv.github.io.git 第二种，新建本地文件然后关联远程库1234mkdir blogcd bloggit initgit remote add origin git@github.com:ccvvv.github.io.git]]></content>
+      <categories>
+        <category>git汇总</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+</search>
