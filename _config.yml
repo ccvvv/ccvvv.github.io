@@ -111,3 +111,4 @@ admin:
   username: o
   password_hash: $2a$10$AGy9ayTD1URNMgV7I7B0zuqJ1veuyJzJqcgEY.4loWN62DzROXCnW
   secret: secret
+  deployCommand: ./hexod.sh
