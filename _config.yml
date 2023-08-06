@@ -105,3 +105,9 @@ deploy:
   type: git
   repo:  git@github.com:ccvvv/ccvvv.github.io.git
   branch: master
+
+# hexo-admin authentification
+admin:
+  username: o
+  password_hash: $2a$10$AGy9ayTD1URNMgV7I7B0zuqJ1veuyJzJqcgEY.4loWN62DzROXCnW
+  secret: secret
