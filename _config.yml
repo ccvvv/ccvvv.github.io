@@ -112,3 +112,10 @@ admin:
   password_hash: $2a$10$AGy9ayTD1URNMgV7I7B0zuqJ1veuyJzJqcgEY.4loWN62DzROXCnW
   secret: secret
   deployCommand: ./hexod.sh
+
+excerpt:			# 一定要顶格写，注意格式
+  depth: 3	  # 他的大小就是全文阅读预览长度设置
+  excerpt_excludes: []
+  more_excludes: []
+  hideWholePostExcerpts: true
+

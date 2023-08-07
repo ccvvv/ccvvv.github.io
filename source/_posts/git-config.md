@@ -1,4 +1,3 @@
----
 title: git config
 date: 2023-08-05 22:24:39
 tags:
@@ -14,6 +13,7 @@ git config --global user.email "178282609@qq.com"
 git config --global user.name "ccvvv"
 ```
 #### 添加密钥
+[官方文档](https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 ```
  ssh-keygen -t ed25519 -C  "178282609@qq.com"
 ```
@@ -45,3 +45,9 @@ cd blog
 git init
 git remote add origin git@github.com:ccvvv.github.io.git
 ```
+### 仓库地址备用
+```
+git@github.com:ccvvv/bf.git
+git@github.com:ccvvv/ccvvv.github.io.git
+```
+
