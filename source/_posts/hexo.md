@@ -1,4 +1,4 @@
-title: hexoo
+title: hexo初始安装
 author: John Doe
 date: 2023-08-06 05:28:34
 tags:

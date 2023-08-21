@@ -3,7 +3,6 @@ author: John Doe
 date: 2023-08-06 20:40:38
 tags:
 ---
-
 ### termux国内源
 ```
 sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/apt/termux-main stable main@' $PREFIX/etc/apt/sources.list&& apt update && apt upgrade
@@ -11,7 +10,11 @@ sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/t
 ### 安装proot-distro及相关指令
 ```
 pkg install proot-distro
+```
+```
 proot-distro install archlinux
+```
+```
 proot-distro remove  archlinux
 ```
 #### 將启动指令添加到环境配置自动打开archlinux
@@ -32,5 +35,3 @@ proot-distro backup archlinux --output /data/data/com.termux/files/home/storage/
 ```
 proot-distro restore /data/data/com.termux/files/home/storage/downloads/bf.tar.gz
 ```
-
-

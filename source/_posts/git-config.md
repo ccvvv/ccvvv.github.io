@@ -21,6 +21,9 @@ git config --global user.name "ccvvv"
 ```
 cat /root/.ssh/id_ed25519.pub
 ```
+#### 將内容添加到网页个人设置的sshkey
+
+
 
 ### 在后台启动 ssh 代理。
 ```
@@ -32,22 +35,8 @@ eval "$(ssh-agent -s)"
 ```
 ssh-add ~/.ssh/id_ed25519
 ```
-
-### 然后两种方式来关联远程库
-### 第一种，直接克隆远程库
-```
-git clone git@github.com:ccvvv.github.io.git
-```
-### 第二种，新建本地文件然后关联远程库
-```
-mkdir blog
-cd blog
-git init
-git remote add origin git@github.com:ccvvv.github.io.git
-```
 ### 仓库地址备用
 ```
 git@github.com:ccvvv/bf.git
 git@github.com:ccvvv/ccvvv.github.io.git
 ```
-
