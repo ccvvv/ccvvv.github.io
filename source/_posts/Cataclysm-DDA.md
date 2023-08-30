@@ -11,7 +11,7 @@ tags:
 ###  下载游戏
 首先克隆下来 depth就是浅拷贝，它只会拷贝最后一次提交，而不是所有的提交记录。
 ```
-git clone -b master --depth=1 https://github.com/CleverRaven/Cataclysm-DDA.git
+git clone -b master --depth=1 https://github.com/CleverRaven/Cataclysm-DDA
 ```
 ###  下载编译所需
 ```
@@ -19,6 +19,7 @@ ccache   clang astyle
 ```
 ### 下载游戏依赖
 #### 基于Arch的依赖：
+
 重要：gcc-libs  glibc  zlib  bzip2 astyle
 可选： gettext           
 终端界面： ncurses
