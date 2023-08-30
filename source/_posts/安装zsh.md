@@ -16,7 +16,7 @@ git clone https://github.com/robbyrussell/oh-my-zsh
 sh /root/oh-my-zsh/tools/install.sh
 ```
 
-以下参考自 [点这个] (http://t.csdn.cn/NoEvL)
+### 以下参考自 [点这个](http://t.csdn.cn/NoEvL)
 
 ### 代码高亮插件zsh-syntax-highlighting
 ```
