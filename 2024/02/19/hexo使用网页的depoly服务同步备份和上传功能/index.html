@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":"ture","show_result":"ture","style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="我的hexo目录在git下有两个分支。一个是 master分支。该分支内容就是hexo部署生成后的静态页面上传内容。另一个是bf分支。该分支是hexo本体文件。本体文件的配置内容是生成静态页面后推送到master分支。使用的admin插件。可以网页编辑，还可以网页上运行自己提前设置好的命令。在博客根目录建立 hexod.sh文件。将以下内容加进该文件1234hexo g &amp;&amp; he">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo使用网页的depoly服务同步备份和上传功能">
+<meta property="og:url" content="http://example.com/2024/02/19/hexo%E4%BD%BF%E7%94%A8%E7%BD%91%E9%A1%B5%E7%9A%84depoly%E6%9C%8D%E5%8A%A1%E5%90%8C%E6%AD%A5%E5%A4%87%E4%BB%BD%E5%92%8C%E4%B8%8A%E4%BC%A0%E5%8A%9F%E8%83%BD/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="我的hexo目录在git下有两个分支。一个是 master分支。该分支内容就是hexo部署生成后的静态页面上传内容。另一个是bf分支。该分支是hexo本体文件。本体文件的配置内容是生成静态页面后推送到master分支。使用的admin插件。可以网页编辑，还可以网页上运行自己提前设置好的命令。在博客根目录建立 hexod.sh文件。将以下内容加进该文件1234hexo g &amp;&amp; he">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-02-19T12:34:13.000Z">
+<meta property="article:modified_time" content="2024-02-20T04:33:07.132Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2024/02/19/hexo%E4%BD%BF%E7%94%A8%E7%BD%91%E9%A1%B5%E7%9A%84depoly%E6%9C%8D%E5%8A%A1%E5%90%8C%E6%AD%A5%E5%A4%87%E4%BB%BD%E5%92%8C%E4%B8%8A%E4%BC%A0%E5%8A%9F%E8%83%BD/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>hexo使用网页的depoly服务同步备份和上传功能 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/19/hexo%E4%BD%BF%E7%94%A8%E7%BD%91%E9%A1%B5%E7%9A%84depoly%E6%9C%8D%E5%8A%A1%E5%90%8C%E6%AD%A5%E5%A4%87%E4%BB%BD%E5%92%8C%E4%B8%8A%E4%BC%A0%E5%8A%9F%E8%83%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/undefined/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          hexo使用网页的depoly服务同步备份和上传功能
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2024-02-19 20:34:13" itemprop="dateCreated datePublished" datetime="2024-02-19T20:34:13+08:00">2024-02-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-02-20 12:33:07" itemprop="dateModified" datetime="2024-02-20T12:33:07+08:00">2024-02-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="我的hexo目录在git下有两个分支。一个是-master分支。该分支内容就是hexo部署生成后的静态页面上传内容。另一个是bf分支。该分支是hexo本体文件。本体文件的配置内容是生成静态页面后推送到master分支。使用的admin插件。可以网页编辑，还可以网页上运行自己提前设置好的命令。"><a href="#我的hexo目录在git下有两个分支。一个是-master分支。该分支内容就是hexo部署生成后的静态页面上传内容。另一个是bf分支。该分支是hexo本体文件。本体文件的配置内容是生成静态页面后推送到master分支。使用的admin插件。可以网页编辑，还可以网页上运行自己提前设置好的命令。" class="headerlink" title="我的hexo目录在git下有两个分支。一个是 master分支。该分支内容就是hexo部署生成后的静态页面上传内容。另一个是bf分支。该分支是hexo本体文件。本体文件的配置内容是生成静态页面后推送到master分支。使用的admin插件。可以网页编辑，还可以网页上运行自己提前设置好的命令。"></a>我的hexo目录在git下有两个分支。一个是 master分支。该分支内容就是hexo部署生成后的静态页面上传内容。另一个是bf分支。该分支是hexo本体文件。本体文件的配置内容是生成静态页面后推送到master分支。使用的admin插件。可以网页编辑，还可以网页上运行自己提前设置好的命令。</h3><h2 id="在博客根目录建立-hexod-sh文件。将以下内容加进该文件"><a href="#在博客根目录建立-hexod-sh文件。将以下内容加进该文件" class="headerlink" title="在博客根目录建立 hexod.sh文件。将以下内容加进该文件"></a>在博客根目录建立 hexod.sh文件。将以下内容加进该文件</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo d</span><br><span class="line">git add .</span><br><span class="line">git commit -m&quot;o&quot;</span><br><span class="line">git push --set-upstream origin bf</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/02/19/hexo%E5%9C%A8termux%E5%90%8E%E5%8F%B0%E8%87%AA%E5%8A%A8%E8%BF%90%E8%A1%8C/" rel="prev" title="hexo在termux下archlinuxarm下后台自动运行">
+      <i class="fa fa-chevron-left"></i> hexo在termux下archlinuxarm下后台自动运行
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E7%9A%84hexo%E7%9B%AE%E5%BD%95%E5%9C%A8git%E4%B8%8B%E6%9C%89%E4%B8%A4%E4%B8%AA%E5%88%86%E6%94%AF%E3%80%82%E4%B8%80%E4%B8%AA%E6%98%AF-master%E5%88%86%E6%94%AF%E3%80%82%E8%AF%A5%E5%88%86%E6%94%AF%E5%86%85%E5%AE%B9%E5%B0%B1%E6%98%AFhexo%E9%83%A8%E7%BD%B2%E7%94%9F%E6%88%90%E5%90%8E%E7%9A%84%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E4%B8%8A%E4%BC%A0%E5%86%85%E5%AE%B9%E3%80%82%E5%8F%A6%E4%B8%80%E4%B8%AA%E6%98%AFbf%E5%88%86%E6%94%AF%E3%80%82%E8%AF%A5%E5%88%86%E6%94%AF%E6%98%AFhexo%E6%9C%AC%E4%BD%93%E6%96%87%E4%BB%B6%E3%80%82%E6%9C%AC%E4%BD%93%E6%96%87%E4%BB%B6%E7%9A%84%E9%85%8D%E7%BD%AE%E5%86%85%E5%AE%B9%E6%98%AF%E7%94%9F%E6%88%90%E9%9D%99%E6%80%81%E9%A1%B5%E9%9D%A2%E5%90%8E%E6%8E%A8%E9%80%81%E5%88%B0master%E5%88%86%E6%94%AF%E3%80%82%E4%BD%BF%E7%94%A8%E7%9A%84admin%E6%8F%92%E4%BB%B6%E3%80%82%E5%8F%AF%E4%BB%A5%E7%BD%91%E9%A1%B5%E7%BC%96%E8%BE%91%EF%BC%8C%E8%BF%98%E5%8F%AF%E4%BB%A5%E7%BD%91%E9%A1%B5%E4%B8%8A%E8%BF%90%E8%A1%8C%E8%87%AA%E5%B7%B1%E6%8F%90%E5%89%8D%E8%AE%BE%E7%BD%AE%E5%A5%BD%E7%9A%84%E5%91%BD%E4%BB%A4%E3%80%82"><span class="nav-number">1.</span> <span class="nav-text">我的hexo目录在git下有两个分支。一个是 master分支。该分支内容就是hexo部署生成后的静态页面上传内容。另一个是bf分支。该分支是hexo本体文件。本体文件的配置内容是生成静态页面后推送到master分支。使用的admin插件。可以网页编辑，还可以网页上运行自己提前设置好的命令。</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E5%8D%9A%E5%AE%A2%E6%A0%B9%E7%9B%AE%E5%BD%95%E5%BB%BA%E7%AB%8B-hexod-sh%E6%96%87%E4%BB%B6%E3%80%82%E5%B0%86%E4%BB%A5%E4%B8%8B%E5%86%85%E5%AE%B9%E5%8A%A0%E8%BF%9B%E8%AF%A5%E6%96%87%E4%BB%B6"><span class="nav-number"></span> <span class="nav-text">在博客根目录建立 hexod.sh文件。将以下内容加进该文件</span></a></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

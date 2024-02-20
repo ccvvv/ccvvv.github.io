@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":"ture","show_result":"ture","style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="安装依赖。npm已经包含nodejs1pacman -S  npm 配置npm国内源 两个选择">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo初始安装">
+<meta property="og:url" content="http://example.com/2023/08/06/hexo/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="安装依赖。npm已经包含nodejs1pacman -S  npm 配置npm国内源 两个选择">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-08-05T21:28:34.000Z">
+<meta property="article:modified_time" content="2024-02-20T04:33:07.132Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2023/08/06/hexo/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>hexo初始安装 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/06/hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/undefined/avatar.gif">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          hexo初始安装
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-08-06 05:28:34" itemprop="dateCreated datePublished" datetime="2023-08-06T05:28:34+08:00">2023-08-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-02-20 12:33:07" itemprop="dateModified" datetime="2024-02-20T12:33:07+08:00">2024-02-20</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h4 id="安装依赖。npm已经包含nodejs"><a href="#安装依赖。npm已经包含nodejs" class="headerlink" title="安装依赖。npm已经包含nodejs"></a>安装依赖。npm已经包含nodejs</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pacman -S  npm</span><br></pre></td></tr></table></figure>
+<h4 id="配置npm国内源-两个选择"><a href="#配置npm国内源-两个选择" class="headerlink" title="配置npm国内源 两个选择"></a>配置npm国内源 两个选择</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry http://registry.npm.taobao.org/</span><br><span class="line">npm config set registry http://mirrors.cloud.tencent.com/npm/</span><br></pre></td></tr></table></figure>
+<h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><p><a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo">官方文档</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<h4 id="新建文件夹用作博客目录"><a href="#新建文件夹用作博客目录" class="headerlink" title="新建文件夹用作博客目录"></a>新建文件夹用作博客目录</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir blog</span><br></pre></td></tr></table></figure>
+<h3 id="hexo-初始化-创建新目录"><a href="#hexo-初始化-创建新目录" class="headerlink" title="hexo 初始化 创建新目录"></a>hexo 初始化 创建新目录</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+<h4 id="进入blog操作"><a href="#进入blog操作" class="headerlink" title="进入blog操作"></a>进入blog操作</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br></pre></td></tr></table></figure>
+<h4 id="安装hexo-git"><a href="#安装hexo-git" class="headerlink" title="安装hexo-git"></a>安装hexo-git</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+<h4 id="添加-config-yml的远程库信息"><a href="#添加-config-yml的远程库信息" class="headerlink" title="添加 _config.yml的远程库信息"></a>添加 _config.yml的远程库信息</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type: git</span><br><span class="line">repo:  git@github.com:ccvvv/ccvvv.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+<h4 id="添加next主题文件的最新版本"><a href="#添加next主题文件的最新版本" class="headerlink" title="添加next主题文件的最新版本"></a>添加next主题文件的最新版本</h4><p><a target="_blank" rel="noopener" href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/INSTALLATION.md">相关网址</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir themes/next</span><br><span class="line">curl -s https://api.github.com/repos/theme-next/hexo-theme-next/releases/latest | grep tarball_url | cut -d &#x27;&quot;&#x27; -f 4 | wget -i - -O- | tar -zx -C themes/next --strip-components=1</span><br></pre></td></tr></table></figure>
+<h4 id="添加admin插件"><a href="#添加admin插件" class="headerlink" title="添加admin插件"></a>添加admin插件</h4><p><a target="_blank" rel="noopener" href="https://github.com/jaredly/hexo-admin">插件网址</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br><span class="line">npm install --save hexo-admin</span><br><span class="line">hexo s</span><br><span class="line">open http://localhost:4000/admin/</span><br></pre></td></tr></table></figure>
+<h5 id="添加admin的网页在线提交功能"><a href="#添加admin的网页在线提交功能" class="headerlink" title="添加admin的网页在线提交功能"></a>添加admin的网页在线提交功能</h5><h6 id="原网址"><a href="#原网址" class="headerlink" title="原网址"></a><a target="_blank" rel="noopener" href="https://github.com/jaredly/hexo-admin/issues/70">原网址</a></h6><p>进入博客根目录，添加脚本文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;hexo d&quot; &gt; hexod.sh</span><br><span class="line">chmod a+x hexod.sh</span><br></pre></td></tr></table></figure>
+<p>修改blog的配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;admin:</span><br><span class="line">  deployCommand: &#x27;./hexod.sh&#x27;&quot; &gt;&gt; _config.yml</span><br></pre></td></tr></table></figure>
+<h3 id="或者另一种方案-hexo-hey"><a href="#或者另一种方案-hexo-hey" class="headerlink" title="或者另一种方案 hexo-hey"></a>或者另一种方案 hexo-hey</h3><h3 id="但是它只能提供在线编辑无法提交，并不方便"><a href="#但是它只能提供在线编辑无法提交，并不方便" class="headerlink" title="但是它只能提供在线编辑无法提交，并不方便"></a>但是它只能提供在线编辑无法提交，并不方便</h3><h4 id="安装hexo-hey"><a href="#安装hexo-hey" class="headerlink" title="安装hexo-hey"></a>安装hexo-hey</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-hey --save </span><br></pre></td></tr></table></figure>
+<h4 id="添加以下内容到你的站点配置文件内"><a href="#添加以下内容到你的站点配置文件内" class="headerlink" title="添加以下内容到你的站点配置文件内"></a>添加以下内容到你的站点配置文件内</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">admin: </span><br><span class="line">  name:hexo </span><br><span class="line">  password: hey</span><br><span class="line">  secret: hey hexo </span><br><span class="line">  expire: 60*1</span><br></pre></td></tr></table></figure>
+<h4 id="启动hexo-hey"><a href="#启动hexo-hey" class="headerlink" title="启动hexo-hey"></a>启动hexo-hey</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<h4 id="打开网页"><a href="#打开网页" class="headerlink" title="打开网页"></a>打开网页</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:4000/admin/admin</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/08/05/git-config/" rel="prev" title="git config">
+      <i class="fa fa-chevron-left"></i> git config
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/08/06/termux%E7%9B%B8%E5%85%B3%E8%AE%BE%E7%BD%AE/" rel="next" title="termux相关设置">
+      termux相关设置 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E3%80%82npm%E5%B7%B2%E7%BB%8F%E5%8C%85%E5%90%ABnodejs"><span class="nav-number">1.</span> <span class="nav-text">安装依赖。npm已经包含nodejs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEnpm%E5%9B%BD%E5%86%85%E6%BA%90-%E4%B8%A4%E4%B8%AA%E9%80%89%E6%8B%A9"><span class="nav-number">2.</span> <span class="nav-text">配置npm国内源 两个选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85hexo"><span class="nav-number">3.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B9%E7%94%A8%E4%BD%9C%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95"><span class="nav-number">4.</span> <span class="nav-text">新建文件夹用作博客目录</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo-%E5%88%9D%E5%A7%8B%E5%8C%96-%E5%88%9B%E5%BB%BA%E6%96%B0%E7%9B%AE%E5%BD%95"><span class="nav-number"></span> <span class="nav-text">hexo 初始化 创建新目录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5blog%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">进入blog操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85hexo-git"><span class="nav-number">2.</span> <span class="nav-text">安装hexo-git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0-config-yml%E7%9A%84%E8%BF%9C%E7%A8%8B%E5%BA%93%E4%BF%A1%E6%81%AF"><span class="nav-number">3.</span> <span class="nav-text">添加 _config.yml的远程库信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0next%E4%B8%BB%E9%A2%98%E6%96%87%E4%BB%B6%E7%9A%84%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%AC"><span class="nav-number">4.</span> <span class="nav-text">添加next主题文件的最新版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0admin%E6%8F%92%E4%BB%B6"><span class="nav-number">5.</span> <span class="nav-text">添加admin插件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0admin%E7%9A%84%E7%BD%91%E9%A1%B5%E5%9C%A8%E7%BA%BF%E6%8F%90%E4%BA%A4%E5%8A%9F%E8%83%BD"><span class="nav-number">5.1.</span> <span class="nav-text">添加admin的网页在线提交功能</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%8E%9F%E7%BD%91%E5%9D%80"><span class="nav-number">5.1.1.</span> <span class="nav-text">原网址</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%96%E8%80%85%E5%8F%A6%E4%B8%80%E7%A7%8D%E6%96%B9%E6%A1%88-hexo-hey"><span class="nav-number"></span> <span class="nav-text">或者另一种方案 hexo-hey</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%86%E6%98%AF%E5%AE%83%E5%8F%AA%E8%83%BD%E6%8F%90%E4%BE%9B%E5%9C%A8%E7%BA%BF%E7%BC%96%E8%BE%91%E6%97%A0%E6%B3%95%E6%8F%90%E4%BA%A4%EF%BC%8C%E5%B9%B6%E4%B8%8D%E6%96%B9%E4%BE%BF"><span class="nav-number"></span> <span class="nav-text">但是它只能提供在线编辑无法提交，并不方便</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85hexo-hey"><span class="nav-number">1.</span> <span class="nav-text">安装hexo-hey</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E4%BB%A5%E4%B8%8B%E5%86%85%E5%AE%B9%E5%88%B0%E4%BD%A0%E7%9A%84%E7%AB%99%E7%82%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%86%85"><span class="nav-number">2.</span> <span class="nav-text">添加以下内容到你的站点配置文件内</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8hexo-hey"><span class="nav-number">3.</span> <span class="nav-text">启动hexo-hey</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E7%BD%91%E9%A1%B5"><span class="nav-number">4.</span> <span class="nav-text">打开网页</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">John Doe</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
