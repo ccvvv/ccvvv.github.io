@@ -30,5 +30,5 @@ npm install hexo-cli -g
 ```
 ### 安装hexo模块
 ```
-'rm -rf node_modules && npm install --force'
+rm -rf node_modules && npm install --force
 ```
