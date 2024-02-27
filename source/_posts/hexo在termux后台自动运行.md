@@ -23,8 +23,9 @@ console.log('stderr: ${stderr}');
 ## 将pm2的运行指令添加到.bash_profile。如果安装了zsh。就写进.zshrc内.
 发现如果直接写入   pm2 start /home/o/blog/run.js
 虽然提示运行成功，可是localhost的网页还是打不开。就只能cd到博客目录下再运行指令了。
+添加>/dev/null 2>&1指令屏蔽pm2的输出。使界面更简洁
 ```
 cd blog
-pm2 start run.js
+pm2 start run.js >/dev/null 2>&1
 cd ..
 ```
